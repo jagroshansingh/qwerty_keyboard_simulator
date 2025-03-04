@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QWERTY Keyboard Simulator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>
+      <section id="display"></section>
+      <section id="keyboard">
+        <div id="alphabets">
+          <div id="function_keys">
+            <p>Esc</p>
+            <p>F1</p>
+            <p>F2</p>
+            <p>F3</p>
+            <p>F4</p>
+            <p>F5</p>
+            <p>F6</p>
+            <p>F7</p>
+            <p>F8</p>
+            <p>F9</p>
+            <p>F10</p>
+            <p>F11</p>
+            <p>F12</p>
+            <p>PrtScr</p>
+            <p>Insert</p>
+            <p>Delete</p>
+          </div>
+          <div id="number_keys" class="normal_keys"></div>
+          <div id="alphabet_keys" class="normal_keys"></div>
+        </div>
+        <div id="numbers" class="normal_keys"></div>
+      </section>
+    </div>
+  </body>
+  <script>
+    document.getElementById("numbers");
+    let numbers = [
+      ["`", "~"],
+      ["1", "!"],
+      ["2", "@"],
+      ["3", "#"],
+      ["4", "$"],
+      ["5", "%"],
+      ["6", "^"],
+      ["7", "&"],
+      ["8", "*"],
+      ["9", "("],
+      [0, ")"],
+      ["-", "_"],
+      ["=", "+"],
+    ];
+    let alphabet = [
+      "q",
+      "w",
+      "e",
+      "r",
+      "t",
+      "y",
+      "u",
+      "i",
+      "o",
+      "p",
+      "[",
+      "]",
+      "\\",
+      "a",
+      "s",
+      "d",
+      "f",
+      "g",
+      "h",
+      "j",
+      "k",
+      "l",
+      ";",
+      "'",
+      "z",
+      "x",
+      "c",
+      "v",
+      "b",
+      "n",
+      "m",
+      ",",
+      ".",
+      "/",
+    ];
+
+    numbers.map((number) => {
+      let p = document.createElement("p");
+      p.textContent = number[0];
+      p.classList.add("normal_keys");
+      document.getElementById("number_keys").appendChild(p);
+    })
+
+    alphabet.map((letter) => {
+      let p = document.createElement("p");
+      p.textContent = letter;
+      p.classList.add("normal_keys");
+      document.getElementById("alphabet_keys").appendChild(p);
+    });
+  </script>
+</html>

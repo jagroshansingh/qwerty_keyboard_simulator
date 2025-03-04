@@ -1,0 +1,55 @@
+p {
+  border-radius: 5px;
+  border: 1px solid blue;
+}
+
+#function_keys {
+  display: flex;
+}
+
+#function_keys > p {
+  height: 30px;
+  width: 40px;
+}
+
+.normal_keys {
+  height: 40px;
+  width: 40px;
+}
+
+#alphabet_keys {
+  display: flex;
+}
+
+#spacebar {
+}
+
+.shift_keys {
+}
+
+.capsLock_keys {
+}
+
+.tab_key {
+}
+
+.enter_key {
+}
+
+.backspace_key {
+}
+
+.arrow_keys {
+}
+
+#alphabets {
+  border: 1px solid red;
+  height: 50vh;
+  width: 70vw;
+}
+
+#keyboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
