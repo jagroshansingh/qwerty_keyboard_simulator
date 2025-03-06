@@ -29,10 +29,18 @@
             <p>Insert</p>
             <p>Delete</p>
           </div>
-          <div id="number_keys" class="normal_keys"></div>
-          <div id="alphabet_keys" class="normal_keys"></div>
+          <div id="number_keys"></div>
+          <div style="display: flex">
+            <div id="left_modifier_keys">
+              <p>Tab</p>
+              <p>CapsLock</p>
+              <p class="shift_keys">Shift</p>
+              <p>Ctrl</p>
+            </div>
+            <div id="alphabet_keys"></div>
+          </div>
         </div>
-        <div id="numbers" class="normal_keys"></div>
+        <div id="numbers"></div>
       </section>
     </div>
   </body>
@@ -72,35 +80,45 @@
       "d",
       "f",
       "g",
-      "h",
-      "j",
-      "k",
-      "l",
-      ";",
-      "'",
-      "z",
-      "x",
-      "c",
-      "v",
-      "b",
-      "n",
-      "m",
-      ",",
-      ".",
-      "/",
+      // "h",
+      // "j",
+      // "k",
+      // "l",
+      // ";",
+      // "'",
+      // "z",
+      // "x",
+      // "c",
+      // "v",
+      // "b",
+      // "n",
+      // "m",
+      // ",",
+      // ".",
+      // "/",
     ];
 
     numbers.map((number) => {
-      let p = document.createElement("p");
-      p.textContent = number[0];
-      p.classList.add("normal_keys");
-      document.getElementById("number_keys").appendChild(p);
-    })
+      let div = document.createElement("div");
+      // div.style.flexDirection="column";
+      // div.style.display="flex";
+      div.style.border
+      // div.classList.add("square_shaped_keys");
+      let p1 = document.createElement("p");
+      let p2 = document.createElement("p");
+      p1.textContent = number[0];
+      p2.textContent = number[1];
+      // p1.style.border = "none";
+      // p2.style.border="none"
+      div.appendChild(p1);
+      div.appendChild(p2);
+      document.getElementById("number_keys").appendChild(div);
+    });
 
     alphabet.map((letter) => {
       let p = document.createElement("p");
       p.textContent = letter;
-      p.classList.add("normal_keys");
+      p.classList.add("square_shaped_keys");
       document.getElementById("alphabet_keys").appendChild(p);
     });
   </script>

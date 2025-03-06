@@ -10,24 +10,55 @@ p {
 #function_keys > p {
   height: 30px;
   width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.normal_keys {
+.square_shaped_keys {
   height: 40px;
   width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#number_keys {
+  display: flex;
+  text-align: center;
+}
+
+#number_keys > div{
+  border-radius: 5px;
+  border:1px solid blue;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column; */
+}
+
+#number_keys p{
+  /* border: none; */
 }
 
 #alphabet_keys {
   display: flex;
 }
 
+#left_modifier_keys {
+}
+
 #spacebar {
 }
 
 .shift_keys {
+  height: 40px;
+  width: 100px;
 }
 
 .capsLock_keys {
+  height: ;
 }
 
 .tab_key {
