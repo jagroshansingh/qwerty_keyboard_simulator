@@ -3,6 +3,10 @@ p {
   border: 1px solid blue;
   margin: 0%;
 }
+p:hover{
+  background-color: gray;
+  cursor: pointer;
+}
 
 #function_keys {
   display: flex;
@@ -34,7 +38,7 @@ p {
   width: 40px;
 }
 
-.multifunctional_keys > p {
+.multifunctional_keys > p{
   border: none;
   border-radius: 0%;
   margin: 0%;
@@ -45,7 +49,7 @@ p {
   text-align: center;
 }
 
-#alphabet_rows > div {
+#alphabet_rows > div, #alphabet_rows > div > div {
   display: flex;
 }
 
@@ -76,7 +80,9 @@ p {
 .enter_key {
 }
 
-.backspace_key {
+#backspace {
+  width: 100px;
+  height:40px;
 }
 
 .arrow_keys {
@@ -92,4 +98,16 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#display{
+  width:200px;
+  height: 100px;
+  /* border:1px solid green; */
+  margin:auto
+}
+
+input{
+  width:200px;
+  height:90px;
 }

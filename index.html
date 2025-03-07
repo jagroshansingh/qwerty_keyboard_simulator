@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QWERTY Keyboard Simulator</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" rows="10" cols="10"/>
   </head>
   <body>
     <div>
-      <section id="display"></section>
+      <section id="display">
+         <input type="text" id="display_area">
+      </section>
       <section id="keyboard">
         <div id="alphabets">
           <div id="function_keys">
@@ -29,15 +31,23 @@
             <p>Insert</p>
             <p>Delete</p>
           </div>
-          <div id="number_keys"></div>
+          <div style="display:flex">
+            <div id="number_keys"></div>
+            <p id="backspace">Backspace</p>
+          </div>
           <div id="alphabet_rows">
-            <div id="alphabets_row1">
+            <div id="row1">
               <p id="tab_key">Tab</p>
+              <div id="alphabets_row1"></div>
             </div>
-            <div id="alphabets_row2">
+            <div id="row2">
               <p id="#capsLock_keys">CapsLock</p>
+              <div id="alphabets_row2"></div>
+              <p id="#enter_keys">Enter</p>
             </div>
-            <div id="alphabets_row3">
+            <div id="row3">
+              <p class="shift_keys">Shift</p>
+              <div id="alphabets_row3"></div>
               <p class="shift_keys">Shift</p>
             </div>
           </div>
@@ -46,7 +56,7 @@
       </section>
     </div>
   </body>
-  <script>
+  <!-- <script>
     document.getElementById("numbers");
     let numbers = [
       ["`", "~"],
@@ -117,8 +127,12 @@
     //alphabet rows
     for (let i = 0; i <= 12; i++) {
       let p = document.createElement("p");
+      // const p=document.createElement("button");
       p.textContent = alphabet[i][0];
       p.classList.add("square_shaped_keys");
+      p.addEventListener("click",()=>{
+
+      })
       if (alphabet[i][1]) {
         let div = document.createElement("div");
         let p2 = document.createElement("p");
@@ -160,5 +174,6 @@
         document.getElementById("alphabets_row3").appendChild(div);
       } else document.getElementById("alphabets_row3").appendChild(p);
     }
-  </script>
+  </script> -->
+  <script src="index.js"></script>
 </html>
