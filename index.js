@@ -10,7 +10,7 @@ const deleteValues = () => {
 };
 document.getElementById("backspace").addEventListener("click", deleteValues);
 
-//shift keys function
+//--------------------------shift keys function----------------------------------
 let shift_keys = document.getElementsByClassName("shift_keys");
 
 shift_keys[0].addEventListener("click", (e) => {
@@ -23,6 +23,8 @@ shift_keys[1].addEventListener("click", () => {
   else e.target.style.backgroundColor = "blue";
 });
 
+
+//-------------------------------enter key function------------------------------
 document.getElementById("enter").addEventListener("click", () => {
   // console.log('display_area');
 });
