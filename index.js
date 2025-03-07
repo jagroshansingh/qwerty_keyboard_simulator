@@ -1,15 +1,32 @@
-const display_area=document.getElementById("display_area")
-const insertValues=(value)=>{
-    let previous_value=display_area.value
-    display_area.value=previous_value+value;
-}
+const display_area = document.getElementById("display_area");
+const insertValues = (value) => {
+  let previous_value = display_area.value;
+  display_area.value = previous_value + value;
+};
 
-const deleteValues=()=>{
-    let previous_value=display_area.value;
-    display_area.value=
-}
+const deleteValues = () => {
+  let previous_value = display_area.value;
+  display_area.value = previous_value.slice(0, -1);
+};
+document.getElementById("backspace").addEventListener("click", deleteValues);
 
-document.getElementById("numbers");
+//shift keys function
+let shift_keys = document.getElementsByClassName("shift_keys");
+
+shift_keys[0].addEventListener("click", (e) => {
+  if (e.target.style.backgroundColor) e.target.style.backgroundColor = "";
+  else e.target.style.backgroundColor = "blue";
+});
+
+shift_keys[1].addEventListener("click", () => {
+  if (e.target.style.backgroundColor) e.target.style.backgroundColor = "";
+  else e.target.style.backgroundColor = "blue";
+});
+
+document.getElementById("enter").addEventListener("click", () => {
+  // console.log('display_area');
+});
+
 let numbers = [
   ["`", "~"],
   ["1", "!"],
@@ -78,51 +95,68 @@ numbers.map((number) => {
 
 //alphabet rows
 for (let i = 0; i <= 12; i++) {
-  let p = document.createElement("p");
+  const p = document.createElement("p");
   p.textContent = alphabet[i][0];
   p.classList.add("square_shaped_keys");
-  p.addEventListener("click",()=>insertValues(alphabet[i][0]))
+  const div = document.createElement("div");
+  div.appendChild(p);
   if (alphabet[i][1]) {
-    let div = document.createElement("div");
     let p2 = document.createElement("p");
     p2.textContent = alphabet[i][1];
     p2.classList.add("square_shaped_keys");
-    p2.addEventListener("onClick",()=>{
-
-    })
     div.classList.add("multifunctional_keys");
-    div.appendChild(p);
     div.appendChild(p2);
-    document.getElementById("alphabets_row1").appendChild(div);
-  } else document.getElementById("alphabets_row1").appendChild(p);
+  }
+  div.addEventListener("click", () =>
+    insertValues(
+      shift_keys[0].style.backgroundColor || shift_keys[1].style.backgroundColor
+        ? alphabet[i][1]
+        : alphabet[i][0]
+    )
+  );
+  document.getElementById("alphabets_row1").appendChild(div);
 }
 for (let i = 13; i <= 23; i++) {
-  let p = document.createElement("p");
+  const p = document.createElement("p");
   p.textContent = alphabet[i][0];
   p.classList.add("square_shaped_keys");
+  const div = document.createElement("div");
+  div.append(p);
   if (alphabet[i][1]) {
-    let div = document.createElement("div");
     let p2 = document.createElement("p");
     p2.textContent = alphabet[i][1];
     p2.classList.add("square_shaped_keys");
     div.classList.add("multifunctional_keys");
-    div.appendChild(p);
     div.appendChild(p2);
-    document.getElementById("alphabets_row2").appendChild(div);
-  } else document.getElementById("alphabets_row2").appendChild(p);
+  }
+  div.addEventListener("click", () =>
+    insertValues(
+      shift_keys[0].style.backgroundColor || shift_keys[1].style.backgroundColor
+        ? alphabet[i][1]
+        : alphabet[i][0]
+    )
+  );
+  document.getElementById("alphabets_row2").appendChild(div);
 }
 for (let i = 24; i <= 35; i++) {
-  let p = document.createElement("p");
+  const p = document.createElement("p");
   p.textContent = alphabet[i][0];
   p.classList.add("square_shaped_keys");
+  const div = document.createElement("div");
+  div.append(p);
   if (alphabet[i][1]) {
-    let div = document.createElement("div");
     let p2 = document.createElement("p");
     p2.textContent = alphabet[i][1];
     p2.classList.add("square_shaped_keys");
     div.classList.add("multifunctional_keys");
-    div.appendChild(p);
     div.appendChild(p2);
-    document.getElementById("alphabets_row3").appendChild(div);
-  } else document.getElementById("alphabets_row3").appendChild(p);
+  }
+  div.addEventListener("click", () =>
+    insertValues(
+      shift_keys[0].style.backgroundColor || shift_keys[1].style.backgroundColor
+        ? alphabet[i][1]
+        : alphabet[i][0]
+    )
+  );
+  document.getElementById("alphabets_row3").appendChild(div);
 }
