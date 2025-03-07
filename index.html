@@ -30,14 +30,16 @@
             <p>Delete</p>
           </div>
           <div id="number_keys"></div>
-          <div style="display: flex">
-            <div id="left_modifier_keys">
-              <p>Tab</p>
-              <p>CapsLock</p>
-              <p class="shift_keys">Shift</p>
-              <p>Ctrl</p>
+          <div id="alphabet_rows">
+            <div id="alphabets_row1">
+              <p id="tab_key">Tab</p>
             </div>
-            <div id="alphabet_keys"></div>
+            <div id="alphabets_row2">
+              <p id="#capsLock_keys">CapsLock</p>
+            </div>
+            <div id="alphabets_row3">
+              <p class="shift_keys">Shift</p>
+            </div>
           </div>
         </div>
         <div id="numbers"></div>
@@ -72,54 +74,91 @@
       "i",
       "o",
       "p",
-      "[",
-      "]",
-      "\\",
+      "{[",
+      "}]",
+      "|\\",
       "a",
       "s",
       "d",
       "f",
       "g",
-      // "h",
-      // "j",
-      // "k",
-      // "l",
-      // ";",
-      // "'",
-      // "z",
-      // "x",
-      // "c",
-      // "v",
-      // "b",
-      // "n",
-      // "m",
-      // ",",
-      // ".",
-      // "/",
+      "h",
+      "j",
+      "k",
+      "l",
+      ":;",
+      "'",
+      "z",
+      "x",
+      "c",
+      "v",
+      "b",
+      "n",
+      "m",
+      "<,",
+      ">.",
+      "?/",
     ];
 
     numbers.map((number) => {
       let div = document.createElement("div");
-      // div.style.flexDirection="column";
-      // div.style.display="flex";
-      div.style.border
-      // div.classList.add("square_shaped_keys");
       let p1 = document.createElement("p");
       let p2 = document.createElement("p");
       p1.textContent = number[0];
       p2.textContent = number[1];
-      // p1.style.border = "none";
-      // p2.style.border="none"
-      div.appendChild(p1);
+      p1.classList.add("square_shaped_keys");
+      p2.classList.add("square_shaped_keys");
+      div.classList.add("multifunctional_keys");
       div.appendChild(p2);
+      div.appendChild(p1);
       document.getElementById("number_keys").appendChild(div);
     });
 
-    alphabet.map((letter) => {
+    //alphabet rows
+    for (let i = 0; i <= 12; i++) {
       let p = document.createElement("p");
-      p.textContent = letter;
+      p.textContent = alphabet[i][0];
       p.classList.add("square_shaped_keys");
-      document.getElementById("alphabet_keys").appendChild(p);
-    });
+      if (alphabet[i][1]) {
+        let div = document.createElement("div");
+        let p2 = document.createElement("p");
+        p2.textContent = alphabet[i][1];
+        p2.classList.add("square_shaped_keys");
+        div.classList.add("multifunctional_keys");
+        div.appendChild(p);
+        div.appendChild(p2);
+        document.getElementById("alphabets_row1").appendChild(div);
+      } else document.getElementById("alphabets_row1").appendChild(p);
+    }
+    for (let i = 13; i <= 23; i++) {
+      let p = document.createElement("p");
+      p.textContent = alphabet[i][0];
+      p.classList.add("square_shaped_keys");
+      if (alphabet[i][1]) {
+        let div = document.createElement("div");
+        let p2 = document.createElement("p");
+        p2.textContent = alphabet[i][1];
+        p2.classList.add("square_shaped_keys");
+        div.classList.add("multifunctional_keys");
+        div.appendChild(p);
+        div.appendChild(p2);
+        document.getElementById("alphabets_row2").appendChild(div);
+      } else document.getElementById("alphabets_row2").appendChild(p);
+    }
+    for (let i = 24; i <= 35; i++) {
+      let p = document.createElement("p");
+      p.textContent = alphabet[i][0];
+      p.classList.add("square_shaped_keys");
+      if (alphabet[i][1]) {
+        let div = document.createElement("div");
+        let p2 = document.createElement("p");
+        p2.textContent = alphabet[i][1];
+        p2.classList.add("square_shaped_keys");
+        div.classList.add("multifunctional_keys");
+        div.appendChild(p);
+        div.appendChild(p2);
+        document.getElementById("alphabets_row3").appendChild(div);
+      } else document.getElementById("alphabets_row3").appendChild(p);
+    }
   </script>
 </html>

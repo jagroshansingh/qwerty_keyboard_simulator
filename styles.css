@@ -1,6 +1,7 @@
 p {
   border-radius: 5px;
   border: 1px solid blue;
+  margin: 0%;
 }
 
 #function_keys {
@@ -23,45 +24,53 @@ p {
   align-items: center;
 }
 
+.multifunctional_keys {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid blue;
+  height: 40px;
+  width: 40px;
+}
+
+.multifunctional_keys > p {
+  border: none;
+  border-radius: 0%;
+  margin: 0%;
+}
+
 #number_keys {
   display: flex;
   text-align: center;
 }
 
-#number_keys > div{
-  border-radius: 5px;
-  border:1px solid blue;
-  height: 40px;
-  width: 40px;
-  display: flex;
-  justify-content: space-between;
-  /* flex-direction: column; */
-}
-
-#number_keys p{
-  /* border: none; */
-}
-
-#alphabet_keys {
+#alphabet_rows > div {
   display: flex;
 }
 
 #left_modifier_keys {
 }
 
-#spacebar {
-}
 
 .shift_keys {
   height: 40px;
-  width: 100px;
+  width: 80px;
 }
 
 .capsLock_keys {
-  height: ;
+  height: 40px;
+  width: 55px;
 }
 
-.tab_key {
+#tab_key {
+  height: 40px;
+  width: 55px;
+}
+
+#spacebar {
+  height: 40px;
+  width: 200px;
 }
 
 .enter_key {
